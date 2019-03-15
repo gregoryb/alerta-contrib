@@ -20,6 +20,7 @@ class HealthchecksWebhook(WebhookBase):
             service=['healthchecks'],
             resource=payload['name'],
             text=payload.get('text', text),
+            event=payload['event'],
             group=payload.get('group', group),
             severity=payload.get('severity', severity),
             value=payload.get('status', status),
